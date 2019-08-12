@@ -18,7 +18,7 @@ install:
   # - rm -rf *.c
 
 before_build:
-  - cd %APPVEYOR_BUILD_FOLDER%\lmfit
+  - cd %APPVEYOR_BUILD_FOLDER%\
   - mkdir bin
   - cd bin
   - cmake ..\lmfit -A%PLATFORM% -T%toolset% #-DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install -DBUILD_SHARED_LIBS=ON
