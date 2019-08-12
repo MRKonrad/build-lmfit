@@ -6,7 +6,8 @@ platform:
   - x64
 
 environment:
-  LMFIT_TAG: v8.2.2
+  # LMFIT_TAG: v8.2.2
+  LMFIT_TAG: master
   ZIP_NAME: lmfit_%LMFIT_TAG%_windows_%PLATFORM%_%toolset%
   matrix:
   # - toolset: v90
