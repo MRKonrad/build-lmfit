@@ -14,6 +14,9 @@ environment:
 
 install:
   - git clone -b %LMFIT_TAG% https://jugit.fz-juelich.de/mlz/lmfit
+  - cd %APPVEYOR_BUILD_FOLDER%\lmfit\demo
+  - rm -rf *.c
+
 
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit
