@@ -14,18 +14,14 @@ environment:
 
 install:
   - git clone -b %LMFIT_TAG% https://jugit.fz-juelich.de/mlz/lmfit
-  # - cd %APPVEYOR_BUILD_FOLDER%\lmfit\demo
-  # - rm -rf *.c
+  - copy /Y CMakeLists.txt lmfit
 
 before_build:
-  - cd %APPVEYOR_BUILD_FOLDER%\
-  - mkdir bin_
-  - cd bin_
-  - cmake ..\lmfit -A%PLATFORM% -T%toolset% -DBUILD_SHARED_LIBS=ON #-DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install
+  - cd %APPVEYOR_BUILD_FOLDER%\lmfit
+  - cmake . -Bbin -A%PLATFORM% -T%toolset% -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install
 
 build_script:
-  - cd %APPVEYOR_BUILD_FOLDER%\bin_
-  - cmake --build . --config RELEASE
+  - cd %APPVEYOR_BUILD_FOLDER%\lmfit\bin
   - cmake --build . --config RELEASE --target INSTALL
 
 after_build:
