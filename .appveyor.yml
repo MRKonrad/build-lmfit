@@ -21,6 +21,7 @@ before_build:
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit\bin
+  - cmake --build . --config RELEASE
   - cmake --build . --config RELEASE --target INSTALL
 
 after_build:
