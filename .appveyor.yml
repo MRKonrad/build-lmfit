@@ -13,8 +13,9 @@ environment:
   - toolset: v140
 
 install:
-  - git clone -b %LMFIT_TAG% https://jugit.fz-juelich.de/mlz/lmfit
-  - copy /Y CMakeLists.txt lmfit
+  # - git clone -b %LMFIT_TAG% https://jugit.fz-juelich.de/mlz/lmfit
+  - git clone https://jugit.fz-juelich.de/mlz/lmfit
+  # - copy /Y CMakeLists.txt lmfit
 
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit
