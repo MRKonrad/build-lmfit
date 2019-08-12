@@ -46,7 +46,7 @@ after_success:
 
 deploy:
   provider: releases # GitHub
-  name: lmfit_${LMFIT_TAG}
+  # name: lmfit_${LMFIT_TAG}
   api_key:
     secure: ${GH_PERSONAL_ACCESS_TOKEN}
   file_glob: ON # to use wildcards
