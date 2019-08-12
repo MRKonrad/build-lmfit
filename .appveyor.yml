@@ -21,7 +21,7 @@ before_build:
   - cd %APPVEYOR_BUILD_FOLDER%\
   - mkdir bin
   - cd bin
-  - cmake ..\lmfit -A%PLATFORM% -T%toolset% #-DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install -DBUILD_SHARED_LIBS=ON
+  - cmake ..\lmfit -A%PLATFORM% -T%toolset% -DBUILD_SHARED_LIBS=ON #-DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install 
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER%\bin
