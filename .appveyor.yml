@@ -20,7 +20,7 @@ install:
 
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit
-  - cmake . -Bbin -A%PLATFORM% -T%toolset% -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install -DLIB_MAN=OFF #-DLIB_INSTALL=OFF
+  - cmake . -Bbin -A%PLATFORM% -T%toolset% -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%\install -DLIB_MAN=OFF -DBUILD_SHARED_LIBS=OFF
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit\bin
@@ -38,7 +38,7 @@ artifacts:
 
 deploy:
   provider: GitHub
-  # release: lmfit_$(lmfit_TAG)
+  release: lmfit_$(lmfit_TAG)
   auth_token:
     secure: J21nvYa1j0K5KlxFo+HRmHh7usNai+gOoSjwYFCbYuVfip3buosHdN99ltY677MY
   draft: false

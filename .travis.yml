@@ -1,4 +1,5 @@
 language: cpp
+dist: trusty
 
 os:
   - linux
@@ -31,13 +32,13 @@ install:
 
 script:
   - cd ${TRAVIS_BUILD_DIR}/lmfit
-  - cmake . -Bbin -DCMAKE_INSTALL_PREFIX=${TRAVIS_BUILD_DIR}/install -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF -DModule_lmfit_VtkGlue=ON -DINSTALL_GTEST=OFF -Dlmfit_DOXYGEN_HTML=OFF -DCMAKE_CXX_STANDARD=${CXX_STANDARD}
+  - cmake . -Bbin -DCMAKE_INSTALL_PREFIX=${TRAVIS_BUILD_DIR}/install -DCMAKE_CXX_STANDARD=${CXX_STANDARD} -DBUILD_SHARED_LIBS=OFF
   - cd ${TRAVIS_BUILD_DIR}/lmfit/bin
   - cmake --build . --config RELEASE
   - cmake --build . --config RELEASE --target install
 
 after_success:
-  - export ZIP_NAME=lmfit_${lmfit_TAG}_${TRAVIS_OS_NAME}_${CXX}_CXX${CXX_STANDARD}
+  - export ZIP_NAME=lmfit_${LMFIT_TAG}_${TRAVIS_OS_NAME}_${CXX}_CXX${CXX_STANDARD}
   - cd ${TRAVIS_BUILD_DIR}/install
   - zip -r ${ZIP_NAME}.zip * # zip
   - cd ${TRAVIS_BUILD_DIR}
