@@ -10,9 +10,7 @@ environment:
   LMFIT_TAG: master
   ZIP_NAME: lmfit_%LMFIT_TAG%_windows_%PLATFORM%_%toolset%
   matrix:
-  # - toolset: v90
-  - toolset: v120
-  # - toolset: v140
+  - toolset: v100
 
 install:
   # - git clone -b %LMFIT_TAG% https://jugit.fz-juelich.de/mlz/lmfit
