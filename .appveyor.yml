@@ -10,7 +10,8 @@ environment:
   LMFIT_TAG: master
   ZIP_NAME: lmfit_%LMFIT_TAG%_windows_%PLATFORM%_%toolset%
   matrix:
-  - toolset: v90
+  # - toolset: v90
+  - toolset: v120
   # - toolset: v140
 
 install:
@@ -24,7 +25,7 @@ before_build:
 
 build_script:
   - cd %APPVEYOR_BUILD_FOLDER%\lmfit\bin
-  - cmake --build . --config RELEASE --target INSTALL
+  - cmake --build . --config Release --target INSTALL
 
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\install
