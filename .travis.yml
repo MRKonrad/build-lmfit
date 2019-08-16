@@ -22,8 +22,8 @@ env:
     # - CXX_STANDARD=11
   global:
     - secure: ${GH_PERSONAL_ACCESS_TOKEN}
-    # - LMFIT_TAG: v8.2.2
     - LMFIT_TAG: master
+    # - LMFIT_TAG: v8.2.2
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
