@@ -1,5 +1,5 @@
 language: cpp
-dist: trusty
+dist: xenial
 
 os:
   - linux
@@ -22,13 +22,12 @@ env:
     # - CXX_STANDARD=11
   global:
     - secure: ${GH_PERSONAL_ACCESS_TOKEN}
-    - LMFIT_TAG: master
-    # - LMFIT_TAG: v8.2.2
+    - LMFIT_TAG: v8.2.2
+    # - LMFIT_TAG: master
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
-  # - git clone -b ${LMFIT_TAG} https://github.com/InsightSoftwareConsortium/lmfit.git
-  - git clone https://jugit.fz-juelich.de/mlz/lmfit
+  - git clone -b ${LMFIT_TAG} https://jugit.fz-juelich.de/mlz/lmfit
 
 script:
   - cd ${TRAVIS_BUILD_DIR}/lmfit
